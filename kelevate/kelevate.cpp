@@ -64,11 +64,6 @@ NTSTATUS KelevateDeviceControl(PDEVICE_OBJECT, PIRP Irp) {
 			break;
 		}
 		// Process logic
-		OBJECT_ATTRIBUTES attr;
-		InitializeObjectAttributes(&attr, nullptr, 0, nullptr, nullptr);
-		CLIENT_ID cid = { 0 };
-		cid.UniqueProcess = UlongToHandle(data->ProcessId);
-
 		PEPROCESS eprocSystem = NULL;
 		status = PsLookupProcessByProcessId(UlongToHandle(4), &eprocSystem);
 		if (!NT_SUCCESS(status)) {

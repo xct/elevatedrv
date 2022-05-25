@@ -15,5 +15,5 @@ sc start kelevate
 ## Usage
 
 ```
-elevate.exe <PID>
+elevate.exe
 ```
